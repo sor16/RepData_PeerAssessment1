@@ -18,6 +18,8 @@ download.file("https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.z
 data=unzip(temp);
 unlink(temp)
 data=read.csv(data)
+#Change class of date variable to class date
+data = transform(data, date = as.POSIXct(date))
 ```
 ###What is mean total number of steps taken per day?
 In this part of the assignment the sum of the number of steps of each day was extracted from the original data. The histogram of the new dataset, histdata, was plotted and then the mean and the median of histdata was computed.
